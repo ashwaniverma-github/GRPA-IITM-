@@ -1,0 +1,83 @@
+## write after grey line 
+
+if task == 'factors':
+    n = int(input())
+    for x in range(1,n+1):
+        if n%x == 0:
+            print(x)
+            
+elif task == 'find_min':
+    n = int(input())
+    nums = []
+    count = 0 
+    while count < n:
+        num = int(input())
+        nums.append(num)
+        count=count+1
+    min_val = nums[0]
+    for x in range(1,n):
+        if nums[x] < min_val:
+            print(nums[x])
+            
+elif task == 'prime_check':
+    n = int(input())
+    flag = False
+    if n == 0 or n==1:
+        print(False)
+    elif n>1:
+        for x in range(2,n):
+            if(n%x)==0:
+                flag = True
+                break
+        if flag:
+            print(False)
+        else:
+            print(True)
+            
+    
+elif task == 'is_sorted':
+    s = input()
+    sort = ''.join(sorted(s))
+    if s==sort:
+        print(True)
+    else:
+        print(False)
+        
+elif task == "any_true":
+    n = int(input())
+    l=[]
+    divisible = False
+    for x in range(1,n+1):
+        nums = int(input())
+        l.append(nums)
+    for num in l:
+        if num%3 == 0:
+            divisible = True
+    if divisible:
+        print(True)
+    else:
+        print(False)
+            
+
+elif task == 'manhattan':
+    # Initialize the starting coordinates
+    x, y = 0, 0
+    
+    while True:
+        direction = input().strip().upper()  # Read input and normalize it
+        if direction == "STOP":
+            break
+        elif direction == "UP":
+            y += 1
+        elif direction == "DOWN":
+            y -= 1
+        elif direction == "LEFT":
+            x -= 1
+        elif direction == "RIGHT":
+            x += 1
+        else:
+            print("Invalid direction, please enter UP, DOWN, LEFT, RIGHT, or STOP.")
+    
+    # Manhattan distance formula: |x| + |y|
+    manhattan_distance = abs(x) + abs(y)
+    print( manhattan_distance)
