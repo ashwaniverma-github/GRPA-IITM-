@@ -1,0 +1,60 @@
+## write after the grey area 
+if task == 'factorial':
+    n = int(input())
+    result = 1
+    for x in range(1,n+1):
+        result = result * x
+    print(result)
+    
+elif task == 'even_numbers':
+    n = int(input())
+    for x in range(0,n+1):
+        if x%2==0:
+            print(x)
+        
+
+elif task == 'power_sequence':
+    n = int(input())
+    result = 1
+    for x in range(n):
+        print(result)
+        result = result * 2 
+        
+elif task == 'sum_not_divisible':
+    n = int(input())
+    total = 0
+    for x in range (n):
+        if x % 4 != 0 and x % 5 != 0:
+            total = total + x
+    print(total)
+        
+
+elif task == 'from_k':
+    n = int(input())
+    k = int(input())
+    count = 0 
+    for x in range(k,0,-1):
+        if count == n:
+            break
+        if x % 2 != 0 and '5' not in str(x) and '9' not in str(x):
+            print(str(x)[::-1])
+            count = count + 1
+            
+
+elif task == 'string_iter':
+    s  = input()
+    prev = 1
+    for char in s:
+        
+        print(int(char)*prev)
+        
+        prev = int(char)
+
+elif task == 'list_iter':
+    lst = eval(input()) # this will load the list from input
+    for l in lst:
+         print(f"{l} - type: {repr(type(l))}")
+        
+
+else:
+    print("Invalid")
