@@ -1,0 +1,74 @@
+## Write after the grey area 
+
+if task == "sum_until_0":
+    total = 0
+    n = int(input())
+    while n!=0: # the terminal condition
+        total = total + n # add n to the total
+        n = int(input()) # take the next n form the input
+    print(total)
+
+elif task == "total_price":
+    total_price = 0
+    while True: # repeat forever since we are breaking inside
+        line = input()
+        if line == 'END': # The terminal condition
+            break
+        quantity, price = line.split() # split uses space by default
+        quantity, price = int(quantity) , int(price) # convert to ints
+        total_price = total_price + quantity * price # accumulate the total price
+    print(total_price)
+elif task == "only_ed_or_ing":
+    while True:
+        word = input()
+        if word.lower() == "stop":
+            break
+        if word.endswith('ed') or word.endswith('ing'):
+            print(word)
+
+elif task == "reverse_sum_palindrome":
+    def is_palindrome(s):
+        return s == s[::-1]
+
+    num = int(input())
+    while num != -1:  # Continue until "-1" is entered
+        rev_num = int(str(num)[::-1])  # Reverse the number
+        total = num + rev_num  # Sum of number and its reverse
+        if is_palindrome(str(total)):  # Check if the sum is a palindrome
+            print(num)
+        num = int(input())  # Read the next number
+
+elif task == "double_string":
+    line = input().strip()
+    while line!="":
+        print(line+line)
+        line  = input().strip()
+
+elif task == "odd_char":
+    result = []
+    line = input().strip()
+    while not line.endswith("."):  
+        result.append(line[::2])  
+        line = input().strip()  
+    result.append(line[::2])  
+    print(" ".join(result)) 
+
+elif task == "only_even_squares":
+    while True:
+        num = input()
+        if(num=="NAN"):
+            break
+        if(int(num)%2==0):
+            print(int(num)**2)
+    
+
+elif task == "only_odd_lines":
+    odd_lines = []
+    line_count = 0
+    line = input().strip()
+    while line != "END": 
+        line_count += 1
+        if line_count % 2 != 0:  
+            odd_lines.append(line)
+        line = input().strip()  
+    print("\n".join(reversed(odd_lines)))
