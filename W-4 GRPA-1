@@ -1,5 +1,3 @@
-## After the grey area 
-
 empty_list = []
 empty_set = set() # be carefull here you might end up creating something called as an empty dict 
 empty_tuple = ()
